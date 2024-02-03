@@ -6,7 +6,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use('/keyPins', diceSetController)
+app.use('/keyPins', keyPinsController)
 
 app.get("/", (req, res) => {
   res.status(200).send("Gatekey Home");
