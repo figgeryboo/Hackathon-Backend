@@ -8,6 +8,6 @@ id SERIAL PRIMARY KEY ,
 name TEXT NOT NULL,
 color TEXT NOT NULL,
 address TEXT NOT NULL,
-comment TEXT NOT NULL(500)
+comment TEXT NOT NULL,
 )
 
