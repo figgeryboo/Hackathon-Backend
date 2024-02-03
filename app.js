@@ -1,6 +1,6 @@
 const cors = require("cors");
 const express = require("express");
-//const keyPinsController = require('./controllers/keyPinsController')
+const keyPinsController = require('./controllers/keyPinsController')
 
 const app = express();
 
