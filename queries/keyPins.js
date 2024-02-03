@@ -2,8 +2,8 @@ const db = require('../db/dbConfig');
 
 const getAllKeyPins = async () => {
   try {
-    const allSets = await db.any('SELECT * FROM gatekey');
-    return allSets;
+    const allKeyPins = await db.any('SELECT * FROM gatekey');
+    return allKeyPins;
   } catch (error) {
     return error;
   }
@@ -21,7 +21,7 @@ const getKeyPin = async (id) => {
 const createKeyPin = async (set) => {
   try {
     const newKeyPin = await db.one(
-      'INSERT INTO gate (name, address, color, comment) VALUES ($1, $2, $3, $4) RETURNING *',
+      'INSERT INTO gatekey (name, address, color, comment) VALUES ($1, $2, $3, $4) RETURNING *',
       [
         set.name,
         set.address,
@@ -47,7 +47,7 @@ const deleteKeyPin = async (id) => {
 const updateKeyPin = async (id, set) => {
   try {
     const updatedKeyPin = await db.one(
-      'UPDATE gatekey SET name=$1, color=$2, address=$3, comment=$4, WHERE id=$5 RETURNING *',
+      'UPDATE gatekey SET name=$1, color=$2, address=$3, comment=$4 WHERE id=$5 RETURNING *',
       [
         set.name,
         set.color,
