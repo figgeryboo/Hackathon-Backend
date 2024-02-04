@@ -7,5 +7,7 @@ CREATE TABLE gatekey(
     name TEXT NOT NULL,
     color TEXT NOT NULL,
     address TEXT NOT NULL,
-    comment TEXT NOT NULL
+    comment TEXT NOT NULL,
+    latitude DOUBLE PRECISION,
+    longitude DOUBLE PRECISION
 );
